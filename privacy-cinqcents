@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>CinqCents iOS App</title>
+
+  <!-- import the webpage's stylesheet -->
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+  <h1>Politique de confidentialité de l'app iOS CinqCents</h1>
+
+  Les développeurs de l'app <b>CinqCents</b> ne recueilleront aucune donnée et n'auront accès en aucun cas à vos données personnelles. 
+</body>
+</html>
