@@ -193,7 +193,7 @@
     -webkit-user-select: none;
   }
 
-    /* Position the "previous button" to the left */
+  /* Position the "previous button" to the left */
   .prev {
     left: 0;
   }
@@ -247,6 +247,63 @@
   .active,
   .demo:hover {
     opacity: 1;
+  }
+</style>
+
+<style>
+  /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_lightbox */
+
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  /* The Close Button */
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    z right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .mySlidesHover {
+    display: none;
+  }
+
+  img.hover-shadow {
+    transition: 0.3s;
+  }
+
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 </style>
 
@@ -377,71 +434,85 @@
           <div class="container">
             <div class="mySlides">
               <div class="numbertext">1 / 14</div>
-              <img src="images/screenshots/main.png" style="width:30%">
+              <img src="images/screenshots/main.png" style="width:30%" onclick="openModal();currentSlideHover(1)"
+                class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">2 / 14</div>
-              <img src="images/screenshots/match.png" style="width:30%">
+              <img src="images/screenshots/match.png" style="width:30%" onclick="openModal();currentSlideHover(2)"
+                class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">3 / 14</div>
-              <img src="images/screenshots/match_with_settings.png" style="width:30%">
+              <img src="images/screenshots/match_with_settings.png" style="width:30%"
+                onclick="openModal();currentSlideHover(3)" class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">4 / 14</div>
-              <img src="images/screenshots/format.png" style="width:30%">
+              <img src="images/screenshots/format.png" style="width:30%" onclick="openModal();currentSlideHover(4)"
+                class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">5 / 14</div>
-              <img src="images/screenshots/setScore.png" style="width:30%">
+              <img src="images/screenshots/setScore.png" style="width:30%" onclick="openModal();currentSlideHover(5)"
+                class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">6 / 14</div>
-              <img src="images/screenshots/score_recipients.png" style="width:30%">
+              <img src="images/screenshots/score_recipients.png" style="width:30%"
+                onclick="openModal();currentSlideHover(6)" class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">7 / 14</div>
-              <img src="images/screenshots/match_strokes.png" style="width:30%">
+              <img src="images/screenshots/match_strokes.png" style="width:30%"
+                onclick="openModal();currentSlideHover(7)" class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">8 / 14</div>
-              <img src="images/screenshots/stroke.png" style="width:30%">
+              <img src="images/screenshots/stroke.png" style="width:30%" onclick="openModal();currentSlideHover(8)"
+                class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">9 / 14</div>
-              <img src="images/screenshots/stroke_winner.png" style="width:30%">
+              <img src="images/screenshots/stroke_winner.png" style="width:30%"
+                onclick="openModal();currentSlideHover(9)" class="hover-shadow cursor">
             </div>
             <div class="mySlides">
               <div class="numbertext">10 / 14</div>
-              <img src="images/screenshots/comment.png" style="width:30%">
+              <img src="images/screenshots/comment.png" style="width:30%" onclick="openModal();currentSlideHover(10)"
+                class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">11 / 14</div>
-              <img src="images/screenshots/stats.png" style="width:30%">
+              <img src="images/screenshots/stats.png" style="width:30%" onclick="openModal();currentSlideHover(11)"
+                class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">12 / 14</div>
-              <img src="images/screenshots/graph.png" style="width:30%">
+              <img src="images/screenshots/graph.png" style="width:30%" onclick="openModal();currentSlideHover(12)"
+                class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">13 / 14</div>
-              <img src="images/screenshots/graph_legend.png" style="width:30%">
+              <img src="images/screenshots/graph_legend.png" style="width:30%"
+                onclick="openModal();currentSlideHover(13)" class="hover-shadow cursor">
             </div>
 
             <div class="mySlides">
               <div class="numbertext">14 / 14</div>
-              <img src="images/screenshots/graph_point_description.png" style="width:30%">
+              <img src="images/screenshots/graph_point_description.png" style="width:30%"
+                onclick="openModal();currentSlide(14)" class="hover-shadow cursor">
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -469,6 +540,118 @@
                 slides[i].style.display = "none";
               }
               slides[slideIndex - 1].style.display = "block";
+            }
+          </script>
+
+          <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+
+              <div class="mySlidesHover">
+                <div class="numbertext">1 / 14</div>
+                <img src="images/screenshots/main.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">2 / 14</div>
+                <img src="images/screenshots/match.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">3 / 14</div>
+                <img src="images/screenshots/match_with_settings.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">4 / 14</div>
+                <img src="images/screenshots/format.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">5 / 14</div>
+                <img src="images/screenshots/setScore.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">6 / 14</div>
+                <img src="images/screenshots/score_recipients.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">7 / 14</div>
+                <img src="images/screenshots/match_strokes.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">8 / 14</div>
+                <img src="images/screenshots/stroke.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">9 / 14</div>
+                <img src="images/screenshots/stroke_winner.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">10 / 14</div>
+                <img src="images/screenshots/comment.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">11 / 14</div>
+                <img src="images/screenshots/stats.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">12 / 14</div>
+                <img src="images/screenshots/graph.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">13 / 14</div>
+                <img src="images/screenshots/graph_legend.png" style="height:100%">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">14 / 14</div>
+                <img src="images/screenshots/graph_point_description.png" style="height:100%">
+              </div>
+
+              <a class="prev" onclick="plusSlidesHover(-1)">❮</a>
+              <a class="next" onclick="plusSlidesHover(1)">❯</a>
+            </div>
+          </div>
+
+          <script>
+            /* This is for the 'Hover' part */
+            function openModal() {
+              document.getElementById("myModal").style.display = "block";
+            }
+
+            function closeModal() {
+              document.getElementById("myModal").style.display = "none";
+            }
+
+            var slideIndexHover = 1;
+            showSlidesHover(slideIndexHover);
+
+            function plusSlidesHover(n) {
+              showSlidesHover(slideIndexHover += n);
+            }
+
+            function currentSlideHover(n) {
+              showSlidesHover(slideIndexHover = n);
+            }
+
+            function showSlidesHover(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlidesHover");
+              if (n > slides.length) { slideIndexHover = 1 }
+              if (n < 1) { slideIndexHover = slides.length }
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              slides[slideIndexHover - 1].style.display = "block";
             }
           </script>
         </div>
