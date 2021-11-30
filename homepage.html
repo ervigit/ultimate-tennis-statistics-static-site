@@ -185,7 +185,7 @@
     padding: 16px;
     margin-top: -50px;
     color: black;
-    /* background-color: rgba(0, 0, 0, 0.8); */
+    background-color: rgba(255, 255, 255, 0.8);
     font-weight: bold;
     font-size: 20px;
     border-radius: 0 3px 3px 0;
@@ -207,7 +207,7 @@
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover,
   .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
   }
 
   /* Number text (1/3 etc) */
@@ -270,7 +270,8 @@
   /* Modal Content */
   .modal-content {
     position: relative;
-    background-color: #fefefe;
+    /* background-color: #fefefe; */
+    background-color: black;
     margin: auto;
     padding: 0;
     width: 90%;
@@ -279,12 +280,13 @@
 
   /* The Close Button */
   .close {
-    color: white;
+    color: black;
     position: absolute;
-    top: 10px;
-    z right: 25px;
+    top: 25%;
+    right: 25px;
     font-size: 35px;
     font-weight: bold;
+    background-color: white;
   }
 
   .close:hover,
@@ -296,6 +298,12 @@
 
   .mySlidesHover {
     display: none;
+  }
+
+  img {
+    margin-bottom: -4px;
+    object-fit: scale-down;
+    height: 100%;
   }
 
   img.hover-shadow {
@@ -549,72 +557,72 @@
 
               <div class="mySlidesHover">
                 <div class="numbertext">1 / 14</div>
-                <img src="images/screenshots/main.png" style="height:100%">
+                <img src="images/screenshots/main.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">2 / 14</div>
-                <img src="images/screenshots/match.png" style="height:100%">
+                <img src="images/screenshots/match.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">3 / 14</div>
-                <img src="images/screenshots/match_with_settings.png" style="height:100%">
+                <img src="images/screenshots/match_with_settings.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">4 / 14</div>
-                <img src="images/screenshots/format.png" style="height:100%">
+                <img src="images/screenshots/format.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">5 / 14</div>
-                <img src="images/screenshots/setScore.png" style="height:100%">
+                <img src="images/screenshots/setScore.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">6 / 14</div>
-                <img src="images/screenshots/score_recipients.png" style="height:100%">
+                <img src="images/screenshots/score_recipients.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">7 / 14</div>
-                <img src="images/screenshots/match_strokes.png" style="height:100%">
+                <img src="images/screenshots/match_strokes.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">8 / 14</div>
-                <img src="images/screenshots/stroke.png" style="height:100%">
+                <img src="images/screenshots/stroke.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">9 / 14</div>
-                <img src="images/screenshots/stroke_winner.png" style="height:100%">
+                <img src="images/screenshots/stroke_winner.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">10 / 14</div>
-                <img src="images/screenshots/comment.png" style="height:100%">
+                <img src="images/screenshots/comment.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">11 / 14</div>
-                <img src="images/screenshots/stats.png" style="height:100%">
+                <img src="images/screenshots/stats.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">12 / 14</div>
-                <img src="images/screenshots/graph.png" style="height:100%">
+                <img src="images/screenshots/graph.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">13 / 14</div>
-                <img src="images/screenshots/graph_legend.png" style="height:100%">
+                <img src="images/screenshots/graph_legend.png" style="width:25%">
               </div>
 
               <div class="mySlidesHover">
                 <div class="numbertext">14 / 14</div>
-                <img src="images/screenshots/graph_point_description.png" style="height:100%">
+                <img src="images/screenshots/graph_point_description.png" style="width:25%">
               </div>
 
               <a class="prev" onclick="plusSlidesHover(-1)">❮</a>
