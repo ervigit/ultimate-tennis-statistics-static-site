@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Standard Meta -->
   <meta charset="utf-8" />
@@ -16,7 +17,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/transition.js"></script>
 
   <style type="text/css">
-
     .hidden.menu {
       display: none;
     }
@@ -25,18 +25,22 @@
       min-height: 700px;
       padding: 1em 0em;
     }
+
     .masthead .logo.item img {
       margin-right: 1em;
     }
+
     .masthead .ui.menu .ui.button {
       margin-left: 0.5em;
     }
+
     .masthead h1.ui.header {
       margin-top: 3em;
       margin-bottom: 0em;
       font-size: 4em;
       font-weight: normal;
     }
+
     .masthead h2 {
       font-size: 1.7em;
       font-weight: normal;
@@ -45,19 +49,24 @@
     .ui.vertical.stripe {
       padding: 8em 0em;
     }
+
     .ui.vertical.stripe h3 {
       font-size: 2em;
     }
-    .ui.vertical.stripe .button + h3,
-    .ui.vertical.stripe p + h3 {
+
+    .ui.vertical.stripe .button+h3,
+    .ui.vertical.stripe p+h3 {
       margin-top: 3em;
     }
+
     .ui.vertical.stripe .floated.image {
       clear: both;
     }
+
     .ui.vertical.stripe p {
       font-size: 1.33em;
     }
+
     .ui.vertical.stripe .horizontal.divider {
       margin: 3em 0em;
     }
@@ -65,6 +74,7 @@
     .quote.stripe.segment {
       padding: 0em;
     }
+
     .quote.stripe.segment .grid .column {
       padding-top: 5em;
       padding-bottom: 5em;
@@ -82,60 +92,237 @@
       .ui.fixed.menu {
         display: none !important;
       }
+
       .secondary.pointing.menu .item,
       .secondary.pointing.menu .menu {
         display: none;
       }
+
       .secondary.pointing.menu .toc.item {
         display: block;
       }
+
       .masthead.segment {
         min-height: 350px;
       }
+
       .masthead h1.ui.header {
         font-size: 2em;
         margin-top: 1.5em;
       }
+
       .masthead h2 {
         margin-top: 0.5em;
         font-size: 1.5em;
       }
     }
-
-
   </style>
 
 
   <script>
-  $(document)
-    .ready(function() {
+    $(document)
+      .ready(function () {
 
-      // fix menu when passed
-      $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
+        // fix menu when passed
+        $('.masthead')
+          .visibility({
+            once: false,
+            onBottomPassed: function () {
+              $('.fixed.menu').transition('fade in');
+            },
+            onBottomPassedReverse: function () {
+              $('.fixed.menu').transition('fade out');
+            }
+          })
+          ;
+
+        // create sidebar and attach to menu open
+        $('.ui.sidebar')
+          .sidebar('attach events', '.toc.item')
+          ;
+
+      })
       ;
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
   </script>
 </head>
+
+<style>
+  body {
+    font-family: Arial;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 10px;
+    margin-top: -50px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Position the "previous button" to the left */
+  .prev {
+    left: 0;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 0px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+</style>
+
+<style>
+  /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_lightbox */
+
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    /* background-color: #fefefe; */
+    background-color: black;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  /* The Close Button */
+  .close {
+    color: black;
+    position: absolute;
+    padding: 5px;
+    top: 25%;
+    right: 0px;
+    font-size: 35px;
+    font-weight: bold;
+    background-color: white;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .mySlidesHover {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  .imgHover {
+    max-width: 100%;
+    max-height: 80vh;
+    margin: auto;
+    width: auto;
+  }
+
+  img.hover-shadow {
+    transition: 0.3s;
+  }
+
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+</style>
+
 <body>
 
-<!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
+  <!-- Following Menu -->
+  <div class="ui large top fixed hidden menu">
     <div class="ui container">
       <div class="active item">
         <a href="homepage.html">Home</a>
@@ -147,159 +334,412 @@
         <a href="support.html">Support</a>
       </div>
       <div class="right item">
-          <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image">
-            <svg width="100" height="50">
-              <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0" width="100%" height="100%"></image>
-            </svg>
-          </a>
+        <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image">
+          <svg width="100" height="50">
+            <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0" width="100%"
+              height="100%"></image>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
 
-<!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
-  <div class="active item">
-    <a href="homepage.html">Home</a>
+  <!-- Sidebar Menu -->
+  <div class="ui vertical inverted sidebar menu">
+    <div class="active item">
+      <a href="homepage.html">Home</a>
+    </div>
+    <div class="item">
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="item">
+      <a href="support.html">Support</a>
+    </div>
+    <div class="item">
+      <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703">Download App</a>
+    </div>
   </div>
-  <div class="item">
-    <a href="privacy.html">Privacy</a>
-  </div>
-  <div class="item">
-    <a href="support.html">Support</a>
-  </div>
-  <div class="item">
-    <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703">Download App</a>
-  </div>
-</div>
 
 
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
-    <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <div class="active item">
-          <a href="homepage.html">Home</a>
-        </div>
-        <div class="item">
-          <a href="privacy.html">Privacy</a>
-        </div>
-        <div class="item">
-          <a href="support.html">Support</a>
-        </div>
-        <div class="right item">
+  <!-- Page Contents -->
+  <div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment">
+      <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <div class="active item">
+            <a href="homepage.html">Home</a>
+          </div>
+          <div class="item">
+            <a href="privacy.html">Privacy</a>
+          </div>
+          <div class="item">
+            <a href="support.html">Support</a>
+          </div>
+          <div class="right item">
             <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image">
               <svg width="100" height="50">
-                <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0" width="100%" height="100%"></image>
+                <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0"
+                  width="100%" height="100%"></image>
               </svg>
             </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="ui text container">
-      <h1 class="ui yellow inverted header">
-            <div class="content">
-              <img class="ui centered rounded small image" src="images/uts-tennisball-sigma.png">
-                Ultimate Tennis Statistics
-            </div>
+      <div class="ui text container">
+        <h1 class="ui yellow inverted header">
+          <div class="content">
+            <img class="ui centered rounded small image" src="images/uts-tennisball-sigma.png">
+            Ultimate Tennis Statistics
+          </div>
         </h1>
         <h2>
           This is the most complete app to collect statistics for tennis match.
         </h2>
+        <h2>
+          The only app which texts the score as the match is played!
+        </h2>
         <h3>
-          In this era of data, if you want to improve your tennis skills, you need data.  This app is exactly for that.  It allows to note, for each point in the match, the way each point ended and you can afterwards watch a whole batch of statistics.
+          In this era of data, if you want to improve your tennis skills, you need data. This app is exactly for that.
+          It allows to note, for each point in the match, the way each point ended and you can afterwards watch a whole
+          batch of statistics.
         </h3>
-    </div>
-  </div>
-
-  <div class="ui vertical stripe segment">
-    <div class="ui centered aligned stackable grid container">
-      <div class="row">
-        <div class="center aligned column">
-          <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image">
-            <svg width="200" height="200">
-              <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" x="0" y="0" width="100%" height="100%"></image>
-            </svg>
-          </a>
-        </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="eight wide column">
-          <h3 class="ui header">Features</h3>
-          <p>Here are the main features:
-            <ul>
-                <li>easily enter the way each point has ended</li>
-            <ul>
-                <li> ace, service winner, service return</li>
-                <li> winner, unforced error, forced error</li>
-                <ul>
-                    <li>forehand, backhand</li>
-                    <li>topspin, slice, volley, smash, drop, passing, swing volley</li>
-                </ul>
-                <li> note the attitude and routine of each player</li>
-                <li> you can even write a note on a point</li>
-            </ul>
-            <li>score is then computed automatically</li>
-            <li>jump to a specified score if you missed some part of the match</li>
-            <li>share the score as the match goes (by sending text messages)</li>
-            <ul>
+    <div class="ui vertical stripe segment">
+      <div class="ui centered aligned stackable grid container">
+        <div class="row">
+          <div class="center aligned column">
+            <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image">
+              <svg width="200" height="200">
+                <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" x="0" y="0"
+                  width="100%" height="100%"></image>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!--
+            <img src="images/screenshots/main.png">
+            <img src="images/screenshots/match.png">
+            <img src="images/screenshots/match_with_settings.png">
+            <img src="images/screenshots/format.png">
+            <img src="images/screenshots/setScore.png">
+            <img src="images/screenshots/score_recipients.png">
+            <img src="images/screenshots/match_strokes.png">
+            <img src="images/screenshots/stroke.png">
+            <img src="images/screenshots/stroke_winner.png">
+            <img src="images/screenshots/comment.png">
+            <img src="images/screenshots/stats.png">
+            <img src="images/screenshots/graph.png">
+            <img src="images/screenshots/graph_legend.png">
+            <img src="images/screenshots/graph_point_description.png">
+        -->
+
+        <div class="row">
+          <h3 class="ui header">Screenshots</h3>
+
+          <div class="container">
+            <div class="mySlides">
+              <div class="numbertext">1 / 14</div>
+              <img src="images/screenshots/main.png" style="width:30%" onclick="openModal();currentSlideHover(1)"
+                class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">2 / 14</div>
+              <img src="images/screenshots/match.png" style="width:30%" onclick="openModal();currentSlideHover(2)"
+                class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">3 / 14</div>
+              <img src="images/screenshots/match_with_settings.png" style="width:30%"
+                onclick="openModal();currentSlideHover(3)" class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">4 / 14</div>
+              <img src="images/screenshots/format.png" style="width:30%" onclick="openModal();currentSlideHover(4)"
+                class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">5 / 14</div>
+              <img src="images/screenshots/setScore.png" style="width:30%" onclick="openModal();currentSlideHover(5)"
+                class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">6 / 14</div>
+              <img src="images/screenshots/score_recipients.png" style="width:30%"
+                onclick="openModal();currentSlideHover(6)" class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">7 / 14</div>
+              <img src="images/screenshots/match_strokes.png" style="width:30%"
+                onclick="openModal();currentSlideHover(7)" class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">8 / 14</div>
+              <img src="images/screenshots/stroke.png" style="width:30%" onclick="openModal();currentSlideHover(8)"
+                class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">9 / 14</div>
+              <img src="images/screenshots/stroke_winner.png" style="width:30%"
+                onclick="openModal();currentSlideHover(9)" class="hover-shadow cursor">
+            </div>
+            <div class="mySlides">
+              <div class="numbertext">10 / 14</div>
+              <img src="images/screenshots/comment.png" style="width:30%" onclick="openModal();currentSlideHover(10)"
+                class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">11 / 14</div>
+              <img src="images/screenshots/stats.png" style="width:30%" onclick="openModal();currentSlideHover(11)"
+                class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">12 / 14</div>
+              <img src="images/screenshots/graph.png" style="width:30%" onclick="openModal();currentSlideHover(12)"
+                class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">13 / 14</div>
+              <img src="images/screenshots/graph_legend.png" style="width:30%"
+                onclick="openModal();currentSlideHover(13)" class="hover-shadow cursor">
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext">14 / 14</div>
+              <img src="images/screenshots/graph_point_description.png" style="width:30%"
+                onclick="openModal();currentSlide(14)" class="hover-shadow cursor">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+          </div>
+
+          <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              if (n > slides.length) { slideIndex = 1 }
+              if (n < 1) { slideIndex = slides.length }
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              slides[slideIndex - 1].style.display = "block";
+            }
+          </script>
+
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+
+              <div class="mySlidesHover">
+                <div class="numbertext">1 / 14</div>
+                <img class="imgHover" src="images/screenshots/main.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">2 / 14</div>
+                <img class="imgHover" src="images/screenshots/match.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">3 / 14</div>
+                <img class="imgHover" src="images/screenshots/match_with_settings.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">4 / 14</div>
+                <img class="imgHover" src="images/screenshots/format.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">5 / 14</div>
+                <img class="imgHover" src="images/screenshots/setScore.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">6 / 14</div>
+                <img class="imgHover" src="images/screenshots/score_recipients.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">7 / 14</div>
+                <img class="imgHover" src="images/screenshots/match_strokes.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">8 / 14</div>
+                <img class="imgHover" src="images/screenshots/stroke.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">9 / 14</div>
+                <img class="imgHover" src="images/screenshots/stroke_winner.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">10 / 14</div>
+                <img class="imgHover" src="images/screenshots/comment.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">11 / 14</div>
+                <img class="imgHover" src="images/screenshots/stats.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">12 / 14</div>
+                <img class="imgHover" src="images/screenshots/graph.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">13 / 14</div>
+                <img class="imgHover" src="images/screenshots/graph_legend.png">
+              </div>
+
+              <div class="mySlidesHover">
+                <div class="numbertext">14 / 14</div>
+                <img class="imgHover" src="images/screenshots/graph_point_description.png">
+              </div>
+
+              <span class="close cursor" onclick="closeModal()">&times;</span>
+              <a class="prev" onclick="plusSlidesHover(-1)">❮</a>
+              <a class="next" onclick="plusSlidesHover(1)">❯</a>
+            </div>
+          </div>
+
+          <script>
+            /* This is for the 'Hover' part */
+            function openModal() {
+              document.getElementById("myModal").style.display = "block";
+            }
+
+            function closeModal() {
+              document.getElementById("myModal").style.display = "none";
+            }
+
+            var slideIndexHover = 1;
+            showSlidesHover(slideIndexHover);
+
+            function plusSlidesHover(n) {
+              showSlidesHover(slideIndexHover += n);
+            }
+
+            function currentSlideHover(n) {
+              showSlidesHover(slideIndexHover = n);
+            }
+
+            function showSlidesHover(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlidesHover");
+              if (n > slides.length) { slideIndexHover = 1 }
+              if (n < 1) { slideIndexHover = slides.length }
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              slides[slideIndexHover - 1].style.display = "block";
+            }
+          </script>
+        </div>
+
+        <div class="row">
+          <div class="eight wide column">
+            <h3 class="ui header">Features</h3>
+            <p>Here are the main features:
+            <ul class="ui list">
+              <li>easily enter the way each point has ended</li>
+              <ul>
+                <li>ace, service winner, service return</li>
+                <li>winner, unforced error, forced error</li>
+                <li>forehand, backhand</li>
+                <li>topspin, slice, volley, smash, drop, passing, swing volley</li>
+                <li>note the attitude and routine of each player</li>
+                <li>you can even write a note on a point</li>
+              </ul>
+              <li>score is then computed automatically</li>
+              <li>jump to a specified score if you missed some part of the match</li>
+              <li>share the score as the match goes (by sending text messages)</li>
+              <ul class="ui list">
                 <li> at each point</li>
                 <li> at the end of each game</li>
                 <li> at the end of each set</li>
-            </ul>
-            <li> look the match statistics</li>
-                <ul>
-                    <li> for the whole match</li>
-                    <li> for each set</li>
-                    <li> they can be easily shared as an image</li>
-                </ul>
-            <li> show a the graph of the match to look for trends</li>
-            <ul>
+              </ul>
+              <li> look the match statistics</li>
+              <ul>
+                <li> for the whole match</li>
+                <li> for each set</li>
+                <li> they can be easily shared as an image</li>
+              </ul>
+              <li> show a the graph of the match to look for trends</li>
+              <ul class="ui list">
                 <li> each point of the graph is button to look exactly what happened at that point</li>
                 <li> it can be easily shared as an image</li>
-            </ul>
-            <li> share the match</li>
-            <ul>
+              </ul>
+              <li> share the match</li>
+              <ul>
                 <li> so another user can open the match in its own device and look for the statistics or graphs</li>
+              </ul>
+              <li> all match formats are supported</li>
+              <li> all the matches are kept so you can review your tennis statistics afterwards</li>
             </ul>
-            <li> all match formats are supported</li>
-            <li> all the matches are kept so you can review your tennis statistics afterwards</li>
-        </ul>
-        <p>
-           The <b>Unlimited Library</b> in-app purchase allows to store an unlimited number of matches win your library.
-        </p>
-        <p>
-           The <b>Advanced</b> in-app purchase allows to qualify each strokes more precisely:
-           <ul>
-                <li> winner, forced error</li>
-                <ul>
-                    <li> deep, short</li>
-                    <li> crosscourt, parallel, inside-in, inside-out</li>
-                </ul>
-                 <li> 2nd stroke after service or after return</li>
-           </ul>
-        </p>
+            <p>
+              The <b>Unlimited Library</b> in-app purchase allows to store an unlimited number of matches win your
+              library.
+            </p>
+            <p>
+              The <b>Advanced</b> in-app purchase allows to qualify each strokes more precisely:
+            <ul class="ui list">
+              <li> winner, forced error</li>
+              <ul>
+                <li> deep, short</li>
+                <li> crosscourt, parallel, inside-in, inside-out</li>
+              </ul>
+              <li> 2nd stroke after service or after return</li>
+            </ul>
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="center aligned column">
-          <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image">
-            <svg width="200" height="200">
-              <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" x="0" y="0" width="100%" height="100%"></image>
-            </svg>
-          </a>
+        <div class="row">
+          <div class="center aligned column">
+            <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image">
+              <svg width="200" height="200">
+                <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" x="0" y="0"
+                  width="100%" height="100%"></image>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!--
+    <!--
   <div class="ui vertical stripe quote segment">
     <div class="ui equal width stackable internally celled grid">
       <div class="center aligned row">
