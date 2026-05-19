@@ -1,19 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-
-  <title>CinqCents iOS App</title>
-
-  <!-- import the webpage's stylesheet -->
-  <link rel="stylesheet" href="styles/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | CinqCents</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(94, 185, 45, 0.05), transparent);
+        }
+        .content-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-main);
+            border-radius: var(--radius-lg);
+            padding: 4rem;
+            margin-bottom: 6rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .content-box h2 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        .content-box p {
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+        }
+        .support-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .support-btn:hover {
+            transform: translateY(-2px);
+            background-color: var(--primary-hover);
+        }
+    </style>
 </head>
-
 <body>
-  <h1>CinqCents iOS App</h1>
 
-  You can get support by sending an email
-  to <a href="mailto:cinqcentsapp@gmail.com">CinqCents Support</a>
+    <main class="container">
+        <section class="page-header">
+            <h1 class="text-gradient">CinqCents</h1>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">Help & Support</p>
+        </section>
+
+        <section class="content-box">
+            <h2>Need Assistance?</h2>
+            <p>If you have any questions about the CinqCents app, feel free to reach out.</p>
+            <a href="mailto:cinqcentsapp@gmail.com" class="support-btn">
+                Contact Support via Email
+            </a>
+        </section>
+    </main>
 
 </body>
 </html>
