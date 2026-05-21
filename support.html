@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="styles/i18n.js"></script>
     <script
         src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
         data-app-id="93DED850-BEDE-49A2-ADA7-52F1E526FF4A">
@@ -74,27 +75,43 @@
                 Ultimate Tennis Statistics
             </a>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="support.html">Support</a>
-                <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Download</a>
+                <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+                <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
+                <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
+                <button id="lang-toggle-btn" class="lang-toggle">
+                    Français
+                </button>
+                <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">
+                    <span class="lang-en">Download</span><span class="lang-fr">Télécharger</span>
+                </a>
             </nav>
         </div>
     </header>
 
     <main class="container">
         <section class="page-header">
-            <h1 class="text-gradient">Help & Support</h1>
+            <h1 class="text-gradient">
+                <span class="lang-en">Help & Support</span>
+                <span class="lang-fr">Aide & Support</span>
+            </h1>
         </section>
 
         <section class="content-box">
-            <h2>Need Assistance?</h2>
-            <p>Our team is here to help you get the most out of Ultimate Tennis Statistics.</p>
+            <h2>
+                <span class="lang-en">Need Assistance?</span>
+                <span class="lang-fr">Besoin d'aide ?</span>
+            </h2>
+            <p>
+                <span class="lang-en">Our team is here to help you get the most out of Ultimate Tennis Statistics.</span>
+                <span class="lang-fr">Notre équipe est là pour vous aider à tirer le meilleur parti d'Ultimate Tennis Statistics.</span>
+            </p>
             <a href="mailto:ultimatetennisstatistics@gmail.com" class="support-btn">
-                Contact Support via Email
+                <span class="lang-en">Contact Support via Email</span>
+                <span class="lang-fr">Contacter le support par e-mail</span>
             </a>
             <p style="margin-top: 3rem; font-size: 1rem;">
-                Typical response time is within 24-48 hours.
+                <span class="lang-en">Typical response time is within 24-48 hours.</span>
+                <span class="lang-fr">Le délai de réponse typique est de 24 à 48 heures.</span>
             </p>
         </section>
     </main>
@@ -102,11 +119,11 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="support.html">Support</a>
+                <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+                <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
+                <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
             </div>
-            <p>&copy; 2026 Ultimate Tennis Statistics. All rights reserved.</p>
+            <p>&copy; 2026 Ultimate Tennis Statistics. <span class="lang-en">All rights reserved.</span><span class="lang-fr">Tous droits réservés.</span></p>
         </div>
     </footer>
 

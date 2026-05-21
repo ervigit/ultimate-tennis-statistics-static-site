@@ -129,14 +129,40 @@ h3 { font-size: 1.75rem; }
 
 /* App Badge Utility */
 .app-store-badge {
-  height: 40px;
-  width: auto;
+height: 40px;
+width: auto;
+}
+
+/* Language Visibility */
+[lang="en"] .lang-fr { display: none !important; }
+[lang="fr"] .lang-en { display: none !important; }
+
+/* Language Toggle Button */
+.lang-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-main);
+  color: var(--text-main);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 60px;
+  justify-content: center;
+}
+.lang-toggle:hover {
+background: rgba(255, 255, 255, 0.1);
+border-color: var(--primary);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  .section-padding { padding: 4rem 0; }
-  .nav-links { display: none; } /* Simplified for now, can add burger menu */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+.section-padding { padding: 4rem 0; }
+.nav-links { display: none; } /* Simplified for now, can add burger menu */
 }

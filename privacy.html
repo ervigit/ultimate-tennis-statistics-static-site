@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="styles/i18n.js"></script>
     <script
         src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
         data-app-id="93DED850-BEDE-49A2-ADA7-52F1E526FF4A">
@@ -61,29 +62,43 @@
                 Ultimate Tennis Statistics
             </a>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="support.html">Support</a>
-                <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Download</a>
+                <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+                <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
+                <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
+                <button id="lang-toggle-btn" class="lang-toggle">
+                    Français
+                </button>
+                <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">
+                    <span class="lang-en">Download</span><span class="lang-fr">Télécharger</span>
+                </a>
             </nav>
         </div>
     </header>
 
     <main class="container">
         <section class="page-header">
-            <h1 class="text-gradient">Privacy Policy</h1>
+            <h1 class="text-gradient">
+                <span class="lang-en">Privacy Policy</span>
+                <span class="lang-fr">Politique de Confidentialité</span>
+            </h1>
         </section>
 
         <section class="content-box">
-            <h2>Our Commitment to Your Privacy</h2>
+            <h2>
+                <span class="lang-en">Our Commitment to Your Privacy</span>
+                <span class="lang-fr">Notre engagement envers votre vie privée</span>
+            </h2>
             <p>
-                The <strong>Ultimate Tennis Statistics</strong> iOS app developers do not collect any personally identifiable information about the users. This app sends anonymous usage information to the privacy-first analytics service <a href="https://telemetrydeck.com">TelemetryDeck</a>. For more details, you can read their <a href="https://telemetrydeck.com/privacy/">privacy policy</a>.
+                <span class="lang-en">The <strong>Ultimate Tennis Statistics</strong> iOS app developers do not collect any personally identifiable information about the users. This app sends anonymous usage information to the privacy-first analytics service <a href="https://telemetrydeck.com">TelemetryDeck</a>. For more details, you can read their <a href="https://telemetrydeck.com/privacy/">privacy policy</a>.</span>
+                <span class="lang-fr">Les développeurs de l'application iOS <strong>Ultimate Tennis Statistics</strong> ne collectent aucune information personnellement identifiable sur les utilisateurs. Cette application envoie des informations d'utilisation anonymes au service d'analyse respectueux de la vie privée <a href="https://telemetrydeck.com">TelemetryDeck</a>. Pour plus de détails, vous pouvez lire leur <a href="https://telemetrydeck.com/privacy/">politique de confidentialité</a>.</span>
             </p>
             <p>
-                This analytics data provide information how the app features are used and not any score or information about users. This anonymous information is used only by the developers to help improve the app experience.
+                <span class="lang-en">This analytics data provide information how the app features are used and not any score or information about users. This anonymous information is used only by the developers to help improve the app experience.</span>
+                <span class="lang-fr">Ces données analytiques fournissent des informations sur la manière dont les fonctionnalités de l'application sont utilisées et non sur les scores ou les informations concernant les utilisateurs. Ces informations anonymes sont utilisées uniquement par les développeurs pour aider à améliorer l'expérience de l'application.</span>
             </p>
             <p>
-                Apart from this anonymous analytics data, the developers do not collect, store, use or get access to any of your data.
+                <span class="lang-en">Apart from this anonymous analytics data, the developers do not collect, store, use or get access to any of your data.</span>
+                <span class="lang-fr">En dehors de ces données analytiques anonymes, les développeurs ne collectent, ne stockent, n'utilisent ni n'ont accès à aucune de vos données.</span>
             </p>
         </section>
     </main>
@@ -91,11 +106,11 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="support.html">Support</a>
+                <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+                <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
+                <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
             </div>
-            <p>&copy; 2026 Ultimate Tennis Statistics. All rights reserved.</p>
+            <p>&copy; 2026 Ultimate Tennis Statistics. <span class="lang-en">All rights reserved.</span><span class="lang-fr">Tous droits réservés.</span></p>
         </div>
     </footer>
 
