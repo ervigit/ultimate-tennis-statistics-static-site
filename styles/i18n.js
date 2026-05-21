@@ -23,11 +23,24 @@
         }
     }
 
+    function updateImages(lang) {
+        const images = document.querySelectorAll('img[data-localized]');
+        images.forEach(img => {
+            const src = img.getAttribute('src');
+            if (lang === 'fr') {
+                img.setAttribute('src', src.replace('/screenshots-en/', '/screenshots-fr/'));
+            } else {
+                img.setAttribute('src', src.replace('/screenshots-fr/', '/screenshots-en/'));
+            }
+        });
+    }
+
     function setLanguage(lang) {
         document.documentElement.setAttribute('lang', lang);
         localStorage.setItem('preferred-language', lang);
         updateToggleButton(lang);
         updateTitle(lang);
+        updateImages(lang);
     }
 
     function updateToggleButton(lang) {

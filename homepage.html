@@ -262,23 +262,23 @@
                 <span class="lang-fr">Galerie de l'App</span>
             </h2>
             <div class="screenshot-grid">
-                <div class="screenshot-item" onclick="openModal('images/screenshots/main.png')">
-                    <img src="images/screenshots/main.png" alt="Main Screen">
+                <div class="screenshot-item" onclick="openModal('images/screenshots-en/main.png')">
+                    <img src="images/screenshots-en/main.png" alt="Main Screen" data-localized>
                 </div>
-                <div class="screenshot-item" onclick="openModal('images/screenshots/match.png')">
-                    <img src="images/screenshots/match.png" alt="Match Screen">
+                <div class="screenshot-item" onclick="openModal('images/screenshots-en/match.png')">
+                    <img src="images/screenshots-en/match.png" alt="Match Screen" data-localized>
                 </div>
-                <div class="screenshot-item" onclick="openModal('images/screenshots/stats.png')">
-                    <img src="images/screenshots/stats.png" alt="Statistics">
+                <div class="screenshot-item" onclick="openModal('images/screenshots-en/stats.png')">
+                    <img src="images/screenshots-en/stats.png" alt="Statistics" data-localized>
                 </div>
-                <div class="screenshot-item" onclick="openModal('images/screenshots/graph.png')">
-                    <img src="images/screenshots/graph.png" alt="Trends Graph">
+                <div class="screenshot-item" onclick="openModal('images/screenshots-en/graph.png')">
+                    <img src="images/screenshots-en/graph.png" alt="Trends Graph" data-localized>
                 </div>
-                <div class="screenshot-item" onclick="openModal('images/screenshots/match_strokes.png')">
-                    <img src="images/screenshots/match_strokes.png" alt="Stroke Analysis">
+                <div class="screenshot-item" onclick="openModal('images/screenshots-en/match_strokes.png')">
+                    <img src="images/screenshots-en/match_strokes.png" alt="Stroke Analysis" data-localized>
                 </div>
-                <div class="screenshot-item" onclick="openModal('images/screenshots/score_recipients.png')">
-                    <img src="images/screenshots/score_recipients.png" alt="Sharing Settings">
+                <div class="screenshot-item" onclick="openModal('images/screenshots-en/score_recipients.png')">
+                    <img src="images/screenshots-en/score_recipients.png" alt="Sharing Settings" data-localized>
                 </div>
             </div>
         </section>
@@ -332,7 +332,12 @@
 
     <script>
         function openModal(src) {
-            document.getElementById('modal-img').src = src;
+            const lang = document.documentElement.getAttribute('lang') || 'en';
+            let finalSrc = src;
+            if (lang === 'fr') {
+                finalSrc = src.replace('/screenshots-en/', '/screenshots-fr/');
+            }
+            document.getElementById('modal-img').src = finalSrc;
             document.getElementById('modal').style.display = 'flex';
         }
     </script>
