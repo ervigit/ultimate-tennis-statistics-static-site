@@ -1,254 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <script
-    src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
-    data-app-id="93DED850-BEDE-49A2-ADA7-52F1E526FF4A">
-  </script>
-
-  <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-  <!-- Site Properties -->
-  <title>Ultimate Tennis Statistics</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/visibility.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/sidebar.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/transition.js"></script>
-
-  <style type="text/css">
-
-    .hidden.menu {
-      display: none;
-    }
-
-    .masthead.segment {
-      min-height: 700px;
-      padding: 1em 0em;
-    }
-    .masthead .logo.item img {
-      margin-right: 1em;
-    }
-    .masthead .ui.menu .ui.button {
-      margin-left: 0.5em;
-    }
-    .masthead h1.ui.header {
-      margin-top: 3em;
-      margin-bottom: 0em;
-      font-size: 4em;
-      font-weight: normal;
-    }
-    .masthead h2 {
-      font-size: 1.7em;
-      font-weight: normal;
-    }
-
-    .ui.vertical.stripe {
-      padding: 8em 0em;
-    }
-    .ui.vertical.stripe h3 {
-      font-size: 2em;
-    }
-    .ui.vertical.stripe .button + h3,
-    .ui.vertical.stripe p + h3 {
-      margin-top: 3em;
-    }
-    .ui.vertical.stripe .floated.image {
-      clear: both;
-    }
-    .ui.vertical.stripe p {
-      font-size: 1.33em;
-    }
-    .ui.vertical.stripe .horizontal.divider {
-      margin: 3em 0em;
-    }
-
-    .quote.stripe.segment {
-      padding: 0em;
-    }
-    .quote.stripe.segment .grid .column {
-      padding-top: 5em;
-      padding-bottom: 5em;
-    }
-
-    .footer.segment {
-      padding: 5em 0em;
-    }
-
-    .secondary.pointing.menu .toc.item {
-      display: none;
-    }
-
-    @media only screen and (max-width: 700px) {
-      .ui.fixed.menu {
-        display: none !important;
-      }
-      .secondary.pointing.menu .item,
-      .secondary.pointing.menu .menu {
-        display: none;
-      }
-      .secondary.pointing.menu .toc.item {
-        display: block;
-      }
-      .masthead.segment {
-        min-height: 350px;
-      }
-      .masthead h1.ui.header {
-        font-size: 2em;
-        margin-top: 1.5em;
-      }
-      .masthead h2 {
-        margin-top: 0.5em;
-        font-size: 1.5em;
-      }
-    }
-
-
-  </style>
-
-
-  <script>
-  $(document)
-    .ready(function() {
-
-      // fix menu when passed
-      $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
-      ;
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Ultimate Tennis Statistics</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="styles/i18n.js"></script>
+    <script
+        src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
+        data-app-id="93DED850-BEDE-49A2-ADA7-52F1E526FF4A">
+    </script>
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(26, 147, 254, 0.05), transparent);
+        }
+        .content-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-main);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            margin-bottom: 6rem;
+        }
+        .content-box h2 {
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        .content-box p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        .content-box a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        footer {
+            border-top: 1px solid var(--border-main);
+            padding: 4rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
-    <div class="ui container">
-      <div class="item">
-        <a href="homepage.html">Home</a>
-      </div>
-      <div class="active item">
-        <a href="privacy.html">Privacy</a>
-      </div>
-      <div class="item">
-        <a href="support.html">Support</a>
-      </div>
-      <div class="right item">
-          <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image">
-            <svg width="100" height="50">
-              <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0" width="100%" height="100%"></image>
-            </svg>
-          </a>
-      </div>
-    </div>
-  </div>
-
-<!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
-  <div class="item">
-    <a href="homepage.html">Home</a>
-  </div>
-  <div class="active item">
-    <a href="privacy.html">Privacy</a>
-  </div>
-  <div class="item">
-    <a href="support.html">Support</a>
-  </div>
-  <div class="item">
-    <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703">Download App</a>
-  </div>
-</div>
-
-
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
-    <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <div class="item">
-          <a href="homepage.html">Home</a>
-        </div>
-        <div class="active item">
-          <a href="privacy.html">Privacy</a>
-        </div>
-        <div class="item">
-          <a href="support.html">Support</a>
-        </div>
-        <div class="right item">
-            <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image">
-              <svg width="100" height="50">
-                <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0" width="100%" height="100%"></image>
-              </svg>
-            </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="ui text container">
-      <h1 class="ui yellow inverted header">
-            <div class="content">
-              <img class="ui centered rounded small image" src="images/uts-tennisball-sigma.png">
+    <header class="glass-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="display: flex; align-items: center; gap: 1rem; font-weight: 800; font-size: 1.2rem;">
+                <img src="images/uts-tennisball-sigma.png" alt="Logo" style="width: 32px;">
                 Ultimate Tennis Statistics
-            </div>
-        </h1>
-        <h2>
-          Privacy policy
-        </h2>
-        <h3>
-          The <b>Ultimate Tennis Statistics</b> iOS app developers do
-          not collect any personally identifiable information about
-          the users.  This app sends anonymous usage information to
-          the privacy-first analytics service <a href="
-          https://telemetrydeck.com"> TelemetryDeck</a>.  For more
-          details, you can read
-          their <a href="https://telemetrydeck.com/privacy/">privacy
-          policy</a>.
-          <br>
-          <br>
-          This analytics data provide information how the app features
-          are used and not any score or information about users.  This
-          anonymous information is used only by the developers to help
-          improve the app experience.  Apart from this anonymous
-          analytics data, the developers do not collect, store, use or
-          get access to any of your data.
-        </h3>
-    </div>
-  </div>
-
-  <div class="ui vertical stripe segment">
-    <div class="ui centered aligned stackable grid container">
-      <div class="row">
-        <div class="center aligned column">
-          <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image">
-            <svg width="200" height="200">
-              <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" x="0" y="0" width="100%" height="100%"></image>
-            </svg>
-          </a>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+                <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
+                <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
+                <button id="lang-toggle-btn" class="lang-toggle">
+                    Français
+                </button>
+                <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">
+                    <span class="lang-en">Download</span><span class="lang-fr">Télécharger</span>
+                </a>
+            </nav>
         </div>
-      </div>
-    </div>
-  </div>
-</body>
+    </header>
 
+    <main class="container">
+        <section class="page-header">
+            <h1 class="text-gradient">
+                <span class="lang-en">Privacy Policy</span>
+                <span class="lang-fr">Politique de Confidentialité</span>
+            </h1>
+        </section>
+
+        <section class="content-box">
+            <h2>
+                <span class="lang-en">Our Commitment to Your Privacy</span>
+                <span class="lang-fr">Notre engagement envers votre vie privée</span>
+            </h2>
+            <p>
+                <span class="lang-en">The <strong>Ultimate Tennis Statistics</strong> iOS app developers do not collect any personally identifiable information about the users. This app sends anonymous usage information to the privacy-first analytics service <a href="https://telemetrydeck.com">TelemetryDeck</a>. For more details, you can read their <a href="https://telemetrydeck.com/privacy/">privacy policy</a>.</span>
+                <span class="lang-fr">Les développeurs de l'application iOS <strong>Ultimate Tennis Statistics</strong> ne collectent aucune information personnellement identifiable sur les utilisateurs. Cette application envoie des informations d'utilisation anonymes au service d'analyse respectueux de la vie privée <a href="https://telemetrydeck.com">TelemetryDeck</a>. Pour plus de détails, vous pouvez lire leur <a href="https://telemetrydeck.com/privacy/">politique de confidentialité</a>.</span>
+            </p>
+            <p>
+                <span class="lang-en">This analytics data provide information how the app features are used and not any score or information about users. This anonymous information is used only by the developers to help improve the app experience.</span>
+                <span class="lang-fr">Ces données analytiques fournissent des informations sur la manière dont les fonctionnalités de l'application sont utilisées et non sur les scores ou les informations concernant les utilisateurs. Ces informations anonymes sont utilisées uniquement par les développeurs pour aider à améliorer l'expérience de l'application.</span>
+            </p>
+            <p>
+                <span class="lang-en">Apart from this anonymous analytics data, the developers do not collect, store, use or get access to any of your data.</span>
+                <span class="lang-fr">En dehors de ces données analytiques anonymes, les développeurs ne collectent, ne stockent, n'utilisent ni n'ont accès à aucune de vos données.</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+                <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
+                <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
+            </div>
+            <p>&copy; 2026 Ultimate Tennis Statistics. <span class="lang-en">All rights reserved.</span><span class="lang-fr">Tous droits réservés.</span></p>
+        </div>
+    </footer>
+
+</body>
 </html>
