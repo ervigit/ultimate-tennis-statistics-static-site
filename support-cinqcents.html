@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
 
@@ -7,13 +7,28 @@
 
   <!-- import the webpage's stylesheet -->
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/i18n.css" />
+  <script src="styles/i18n.js"></script>
 </head>
 
 <body>
+  <div style="text-align: right; margin-bottom: 1em;">
+    <a href="javascript:void(0)" onclick="toggleLanguage()" class="lang-toggle-btn">
+      <span class="lang-en">Français</span>
+      <span class="lang-fr">English</span>
+    </a>
+  </div>
+
   <h1>CinqCents iOS App</h1>
 
-  You can get support by sending an email
-  to <a href="mailto:cinqcentsapp@gmail.com">CinqCents Support</a>
+  <p class="lang-en">
+    You can get support by sending an email
+    to <a href="mailto:cinqcentsapp@gmail.com">CinqCents Support</a>
+  </p>
+  <p class="lang-fr">
+    Vous pouvez obtenir de l'aide en envoyant un e-mail
+    au <a href="mailto:cinqcentsapp@gmail.com">Support CinqCents</a>
+  </p>
 
 </body>
 </html>

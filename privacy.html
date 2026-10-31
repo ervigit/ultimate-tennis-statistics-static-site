@@ -15,6 +15,8 @@
   <title>Ultimate Tennis Statistics</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+  <link rel="stylesheet" href="styles/i18n.css">
+  <script src="styles/i18n.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/visibility.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/sidebar.js"></script>
@@ -143,20 +145,32 @@
 <div class="ui large top fixed hidden menu">
     <div class="ui container">
       <div class="item">
-        <a href="homepage.html">Home</a>
+        <a href="homepage.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
       </div>
       <div class="active item">
-        <a href="privacy.html">Privacy</a>
+        <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
       </div>
       <div class="item">
-        <a href="support.html">Support</a>
+        <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
       </div>
-      <div class="right item">
-          <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image">
+      <div class="right menu">
+        <div class="item">
+          <a href="javascript:void(0)" onclick="toggleLanguage()" class="lang-toggle-btn">
+            <span class="lang-en">Français</span><span class="lang-fr">English</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image lang-en">
             <svg width="100" height="50">
               <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0" width="100%" height="100%"></image>
             </svg>
           </a>
+          <a href="https://apps.apple.com/fr/app/ultimate-tennis-statistics/id1500516703" class="ui image lang-fr">
+            <svg width="100" height="50">
+              <image xlink:href="images/Download_on_the_App_Store_Badge_FR_RGB_wht_100217.svg" x="0" y="0" width="100%" height="100%"></image>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -164,16 +178,22 @@
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
   <div class="item">
-    <a href="homepage.html">Home</a>
+    <a href="homepage.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
   </div>
   <div class="active item">
-    <a href="privacy.html">Privacy</a>
+    <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
   </div>
   <div class="item">
-    <a href="support.html">Support</a>
+    <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
   </div>
   <div class="item">
-    <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703">Download App</a>
+    <a href="javascript:void(0)" onclick="toggleLanguage()" class="lang-toggle-btn">
+      <span class="lang-en">Français</span><span class="lang-fr">English</span>
+    </a>
+  </div>
+  <div class="item">
+    <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="lang-en">Download App</a>
+    <a href="https://apps.apple.com/fr/app/ultimate-tennis-statistics/id1500516703" class="lang-fr">Télécharger l'app</a>
   </div>
 </div>
 
@@ -187,20 +207,32 @@
           <i class="sidebar icon"></i>
         </a>
         <div class="item">
-          <a href="homepage.html">Home</a>
+          <a href="homepage.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
         </div>
         <div class="active item">
-          <a href="privacy.html">Privacy</a>
+          <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
         </div>
         <div class="item">
-          <a href="support.html">Support</a>
+          <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
         </div>
-        <div class="right item">
-            <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image">
+        <div class="right menu">
+          <div class="item">
+            <a href="javascript:void(0)" onclick="toggleLanguage()" class="lang-toggle-btn">
+              <span class="lang-en">Français</span><span class="lang-fr">English</span>
+            </a>
+          </div>
+          <div class="item">
+            <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image lang-en">
               <svg width="100" height="50">
                 <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0" width="100%" height="100%"></image>
               </svg>
             </a>
+            <a href="https://apps.apple.com/fr/app/ultimate-tennis-statistics/id1500516703" class="ui image lang-fr">
+              <svg width="100" height="50">
+                <image xlink:href="images/Download_on_the_App_Store_Badge_FR_RGB_wht_100217.svg" x="0" y="0" width="100%" height="100%"></image>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -213,25 +245,44 @@
             </div>
         </h1>
         <h2>
-          Privacy policy
+          <span class="lang-en">Privacy policy</span>
+          <span class="lang-fr">Politique de confidentialité</span>
         </h2>
         <h3>
-          The <b>Ultimate Tennis Statistics</b> iOS app developers do
-          not collect any personally identifiable information about
-          the users.  This app sends anonymous usage information to
-          the privacy-first analytics service <a href="
-          https://telemetrydeck.com"> TelemetryDeck</a>.  For more
-          details, you can read
-          their <a href="https://telemetrydeck.com/privacy/">privacy
-          policy</a>.
-          <br>
-          <br>
-          This analytics data provide information how the app features
-          are used and not any score or information about users.  This
-          anonymous information is used only by the developers to help
-          improve the app experience.  Apart from this anonymous
-          analytics data, the developers do not collect, store, use or
-          get access to any of your data.
+          <span class="lang-en">
+            The <b>Ultimate Tennis Statistics</b> iOS app developers do
+            not collect any personally identifiable information about
+            the users.  This app sends anonymous usage information to
+            the privacy-first analytics service <a href="https://telemetrydeck.com"> TelemetryDeck</a>.  For more
+            details, you can read
+            their <a href="https://telemetrydeck.com/privacy/">privacy
+            policy</a>.
+            <br>
+            <br>
+            This analytics data provide information how the app features
+            are used and not any score or information about users.  This
+            anonymous information is used only by the developers to help
+            improve the app experience.  Apart from this anonymous
+            analytics data, the developers do not collect, store, use or
+            get access to any of your data.
+          </span>
+          <span class="lang-fr">
+            Les développeurs de l'application iOS <b>Ultimate Tennis Statistics</b> ne
+            collectent aucune information personnellement identifiable sur
+            les utilisateurs.  Cette application envoie des informations d'utilisation anonymes au
+            service d'analyse respectueux de la vie privée <a href="https://telemetrydeck.com"> TelemetryDeck</a>.  Pour plus de
+            détails, vous pouvez lire
+            leur <a href="https://telemetrydeck.com/privacy/">politique de
+            confidentialité</a>.
+            <br>
+            <br>
+            Ces données analytiques fournissent des informations sur la façon dont les fonctionnalités de l'application
+            sont utilisées et non sur les scores ou les informations concernant les utilisateurs.  Ces
+            informations anonymes sont utilisées uniquement par les développeurs pour aider à
+            améliorer l'expérience de l'application.  En dehors de ces données
+            analytiques anonymes, les développeurs ne collectent, ne stockent, n'utilisent ni
+            n'ont accès à aucune de vos données.
+          </span>
         </h3>
     </div>
   </div>
@@ -240,15 +291,21 @@
     <div class="ui centered aligned stackable grid container">
       <div class="row">
         <div class="center aligned column">
-          <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image">
+          <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image lang-en">
             <svg width="200" height="200">
               <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" x="0" y="0" width="100%" height="100%"></image>
+            </svg>
+          </a>
+          <a href="https://apps.apple.com/fr/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image lang-fr">
+            <svg width="200" height="200">
+              <image xlink:href="images/Download_on_the_App_Store_Badge_FR_RGB_blk_100517.svg" x="0" y="0" width="100%" height="100%"></image>
             </svg>
           </a>
         </div>
       </div>
     </div>
   </div>
+</div>
 </body>
 
 </html>

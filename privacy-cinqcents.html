@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
 
@@ -7,11 +7,28 @@
 
   <!-- import the webpage's stylesheet -->
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/i18n.css" />
+  <script src="styles/i18n.js"></script>
 </head>
 
 <body>
-  <h1>Politique de confidentialité de l'app iOS CinqCents</h1>
+  <div style="text-align: right; margin-bottom: 1em;">
+    <a href="javascript:void(0)" onclick="toggleLanguage()" class="lang-toggle-btn">
+      <span class="lang-en">Français</span>
+      <span class="lang-fr">English</span>
+    </a>
+  </div>
 
-  Les développeurs de l'app <b>CinqCents</b> ne recueilleront aucune donnée et n'auront accès en aucun cas à vos données personnelles. 
+  <h1>
+    <span class="lang-en">CinqCents iOS App Privacy Policy</span>
+    <span class="lang-fr">Politique de confidentialité de l'app iOS CinqCents</span>
+  </h1>
+
+  <p class="lang-en">
+    The developers of the <b>CinqCents</b> app will not collect any data and will under no circumstances have access to your personal data.
+  </p>
+  <p class="lang-fr">
+    Les développeurs de l'app <b>CinqCents</b> ne recueilleront aucune donnée et n'auront accès en aucun cas à vos données personnelles.
+  </p>
 </body>
 </html>
