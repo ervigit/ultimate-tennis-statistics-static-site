@@ -36,19 +36,6 @@
     }
   }
 
-  function updateImages(lang) {
-    var images = document.querySelectorAll('img[data-localized]');
-    images.forEach(function(img) {
-      var src = img.getAttribute('src');
-      if (!src) return;
-      if (lang === 'fr') {
-        img.setAttribute('src', src.replace('/screenshots-en/', '/screenshots-fr/').replace('/screenshots/', '/screenshots-fr/'));
-      } else {
-        img.setAttribute('src', src.replace('/screenshots-fr/', '/screenshots-en/'));
-      }
-    });
-  }
-
   function setLanguage(lang) {
     if (lang !== 'fr' && lang !== 'en') {
       lang = 'en';
@@ -59,7 +46,6 @@
     } catch (e) {}
 
     updateTitle(lang);
-    updateImages(lang);
   }
 
   function toggleLanguage() {
@@ -76,7 +62,7 @@
   var initialLang = getPreferredLanguage();
   document.documentElement.setAttribute('lang', initialLang);
 
-  // When DOM is loaded, update images & title
+  // When DOM is loaded, update title
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       setLanguage(document.documentElement.getAttribute('lang') || initialLang);
