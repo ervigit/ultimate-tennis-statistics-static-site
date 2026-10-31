@@ -16,6 +16,8 @@
   <title>Ultimate Tennis Statistics</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+  <link rel="stylesheet" href="styles/i18n.css">
+  <script src="styles/i18n.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/visibility.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/sidebar.js"></script>
@@ -330,21 +332,34 @@
   <div class="ui large top fixed hidden menu">
     <div class="ui container">
       <div class="active item">
-        <a href="homepage.html">Home</a>
+        <a href="homepage.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
       </div>
       <div class="item">
-        <a href="privacy.html">Privacy</a>
+        <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
       </div>
       <div class="item">
-        <a href="support.html">Support</a>
+        <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
       </div>
-      <div class="right item">
-        <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image">
-          <svg width="100" height="50">
-            <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0" width="100%"
-              height="100%"></image>
-          </svg>
-        </a>
+      <div class="right menu">
+        <div class="item">
+          <a href="javascript:void(0)" onclick="toggleLanguage()" class="lang-toggle-btn">
+            <span class="lang-en">Français</span><span class="lang-fr">English</span>
+          </a>
+        </div>
+        <div class="item">
+          <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image lang-en">
+            <svg width="100" height="50">
+              <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0" width="100%"
+                height="100%"></image>
+            </svg>
+          </a>
+          <a href="https://apps.apple.com/fr/app/ultimate-tennis-statistics/id1500516703" class="ui image lang-fr">
+            <svg width="100" height="50">
+              <image xlink:href="images/Download_on_the_App_Store_Badge_FR_RGB_wht_100217.svg" x="0" y="0" width="100%"
+                height="100%"></image>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -352,16 +367,22 @@
   <!-- Sidebar Menu -->
   <div class="ui vertical inverted sidebar menu">
     <div class="active item">
-      <a href="homepage.html">Home</a>
+      <a href="homepage.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
     </div>
     <div class="item">
-      <a href="privacy.html">Privacy</a>
+      <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
     </div>
     <div class="item">
-      <a href="support.html">Support</a>
+      <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
     </div>
     <div class="item">
-      <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703">Download App</a>
+      <a href="javascript:void(0)" onclick="toggleLanguage()" class="lang-toggle-btn">
+        <span class="lang-en">Français</span><span class="lang-fr">English</span>
+      </a>
+    </div>
+    <div class="item">
+      <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="lang-en">Download App</a>
+      <a href="https://apps.apple.com/fr/app/ultimate-tennis-statistics/id1500516703" class="lang-fr">Télécharger l'app</a>
     </div>
   </div>
 
@@ -375,21 +396,34 @@
             <i class="sidebar icon"></i>
           </a>
           <div class="active item">
-            <a href="homepage.html">Home</a>
+            <a href="homepage.html"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
           </div>
           <div class="item">
-            <a href="privacy.html">Privacy</a>
+            <a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-fr">Confidentialité</span></a>
           </div>
           <div class="item">
-            <a href="support.html">Support</a>
+            <a href="support.html"><span class="lang-en">Support</span><span class="lang-fr">Support</span></a>
           </div>
-          <div class="right item">
-            <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image">
-              <svg width="100" height="50">
-                <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0"
-                  width="100%" height="100%"></image>
-              </svg>
-            </a>
+          <div class="right menu">
+            <div class="item">
+              <a href="javascript:void(0)" onclick="toggleLanguage()" class="lang-toggle-btn">
+                <span class="lang-en">Français</span><span class="lang-fr">English</span>
+              </a>
+            </div>
+            <div class="item">
+              <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui image lang-en">
+                <svg width="100" height="50">
+                  <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_wht_092917.svg" x="0" y="0"
+                    width="100%" height="100%"></image>
+                </svg>
+              </a>
+              <a href="https://apps.apple.com/fr/app/ultimate-tennis-statistics/id1500516703" class="ui image lang-fr">
+                <svg width="100" height="50">
+                  <image xlink:href="images/Download_on_the_App_Store_Badge_FR_RGB_wht_100217.svg" x="0" y="0"
+                    width="100%" height="100%"></image>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -402,15 +436,24 @@
           </div>
         </h1>
         <h2>
-          This is the most complete app to collect statistics for tennis match.
+          <span class="lang-en">This is the most complete app to collect statistics for tennis match.</span>
+          <span class="lang-fr">C'est l'application la plus complète pour collecter des statistiques pour un match de tennis.</span>
         </h2>
         <h2>
-          The only app which texts the score as the match is played!
+          <span class="lang-en">The only app which texts the score as the match is played!</span>
+          <span class="lang-fr">La seule application qui envoie le score par texto au fur et à mesure que le match est joué !</span>
         </h2>
         <h3>
-          In this era of data, if you want to improve your tennis skills, you need data. This app is exactly for that.
-          It allows to note, for each point in the match, the way each point ended and you can afterwards watch a whole
-          batch of statistics.
+          <span class="lang-en">
+            In this era of data, if you want to improve your tennis skills, you need data. This app is exactly for that.
+            It allows to note, for each point in the match, the way each point ended and you can afterwards watch a whole
+            batch of statistics.
+          </span>
+          <span class="lang-fr">
+            En cette ère des données, si vous voulez améliorer vos compétences au tennis, vous avez besoin de données. Cette application est exactement pour cela.
+            Elle permet de noter, pour chaque point du match, la façon dont chaque point s'est terminé et vous pouvez ensuite regarder tout un
+            ensemble de statistiques.
+          </span>
         </h3>
       </div>
     </div>
@@ -419,34 +462,26 @@
       <div class="ui centered aligned stackable grid container">
         <div class="row">
           <div class="center aligned column">
-            <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image">
+            <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image lang-en">
               <svg width="200" height="200">
                 <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" x="0" y="0"
+                  width="100%" height="100%"></image>
+              </svg>
+            </a>
+            <a href="https://apps.apple.com/fr/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image lang-fr">
+              <svg width="200" height="200">
+                <image xlink:href="images/Download_on_the_App_Store_Badge_FR_RGB_blk_100517.svg" x="0" y="0"
                   width="100%" height="100%"></image>
               </svg>
             </a>
           </div>
         </div>
 
-        <!--
-            <img src="images/screenshots/main.png">
-            <img src="images/screenshots/match.png">
-            <img src="images/screenshots/match_with_settings.png">
-            <img src="images/screenshots/format.png">
-            <img src="images/screenshots/setScore.png">
-            <img src="images/screenshots/score_recipients.png">
-            <img src="images/screenshots/match_strokes.png">
-            <img src="images/screenshots/stroke.png">
-            <img src="images/screenshots/stroke_winner.png">
-            <img src="images/screenshots/comment.png">
-            <img src="images/screenshots/stats.png">
-            <img src="images/screenshots/graph.png">
-            <img src="images/screenshots/graph_legend.png">
-            <img src="images/screenshots/graph_point_description.png">
-        -->
-
         <div class="row">
-          <h3 class="ui header">Screenshots</h3>
+          <h3 class="ui header">
+            <span class="lang-en">Screenshots</span>
+            <span class="lang-fr">Captures d'écran</span>
+          </h3>
 
           <div class="container">
             <div class="mySlides">
@@ -675,61 +710,172 @@
 
         <div class="row">
           <div class="eight wide column">
-            <h3 class="ui header">Features</h3>
-            <p>Here are the main features:
+            <h3 class="ui header">
+              <span class="lang-en">Features</span>
+              <span class="lang-fr">Fonctionnalités</span>
+            </h3>
+            <p>
+              <span class="lang-en">Here are the main features:</span>
+              <span class="lang-fr">Voici les fonctionnalités principales :</span>
+            </p>
             <ul class="ui list">
-              <li>easily enter the way each point has ended</li>
+              <li>
+                <span class="lang-en">easily enter the way each point has ended</span>
+                <span class="lang-fr">entrez facilement la façon dont chaque point s'est terminé</span>
+              </li>
               <ul>
-                <li>ace, service winner, service return</li>
-                <li>winner, unforced error, forced error</li>
-                <li>forehand, backhand</li>
-                <li>topspin, slice, volley, smash, drop, passing, swing volley</li>
-                <li>note the attitude and routine of each player</li>
-                <li>you can even write a note on a point</li>
+                <li>
+                  <span class="lang-en">ace, service winner, service return</span>
+                  <span class="lang-fr">ace, service gagnant, retour de service</span>
+                </li>
+                <li>
+                  <span class="lang-en">winner, unforced error, forced error</span>
+                  <span class="lang-fr">coup gagnant, faute directe, faute provoquée</span>
+                </li>
+                <li>
+                  <span class="lang-en">forehand, backhand</span>
+                  <span class="lang-fr">coup droit, revers</span>
+                </li>
+                <li>
+                  <span class="lang-en">topspin, slice, volley, smash, drop, passing, swing volley</span>
+                  <span class="lang-fr">lift, slice, volée, smash, amortie, passing, volée liftée</span>
+                </li>
+                <li>
+                  <span class="lang-en">note the attitude and routine of each player</span>
+                  <span class="lang-fr">notez l'attitude et la routine de chaque joueur</span>
+                </li>
+                <li>
+                  <span class="lang-en">you can even write a note on a point</span>
+                  <span class="lang-fr">vous pouvez même écrire une note sur un point</span>
+                </li>
               </ul>
-              <li>score is then computed automatically</li>
-              <li>jump to a specified score if you missed some part of the match</li>
-              <li>share the score as the match goes (by sending text messages)</li>
+              <li>
+                <span class="lang-en">score is then computed automatically</span>
+                <span class="lang-fr">le score est ensuite calculé automatiquement</span>
+              </li>
+              <li>
+                <span class="lang-en">jump to a specified score if you missed some part of the match</span>
+                <span class="lang-fr">sautez à un score spécifié si vous avez manqué une partie du match</span>
+              </li>
+              <li>
+                <span class="lang-en">share the score as the match goes (by sending text messages)</span>
+                <span class="lang-fr">partagez le score au fur et à mesure du match (en envoyant des textos)</span>
+              </li>
               <ul class="ui list">
-                <li> at each point</li>
-                <li> at the end of each game</li>
-                <li> at the end of each set</li>
+                <li>
+                  <span class="lang-en"> at each point</span>
+                  <span class="lang-fr"> à chaque point</span>
+                </li>
+                <li>
+                  <span class="lang-en"> at the end of each game</span>
+                  <span class="lang-fr"> à la fin de chaque jeu</span>
+                </li>
+                <li>
+                  <span class="lang-en"> at the end of each set</span>
+                  <span class="lang-fr"> à la fin de chaque set</span>
+                </li>
               </ul>
-              <li> look the match statistics</li>
+              <li>
+                <span class="lang-en"> look the match statistics</span>
+                <span class="lang-fr"> regardez les statistiques du match</span>
+              </li>
               <ul>
-                <li> for the whole match</li>
-                <li> for each set</li>
-                <li> at net</li>
-                <li> on pressure points at 30-30 or 40-40</li>
-                <li> when score is 15-30</li>
-                <li> the stats can be easily shared as an image or a CSV file</li>
+                <li>
+                  <span class="lang-en"> for the whole match</span>
+                  <span class="lang-fr"> pour l'ensemble du match</span>
+                </li>
+                <li>
+                  <span class="lang-en"> for each set</span>
+                  <span class="lang-fr"> pour chaque set</span>
+                </li>
+                <li>
+                  <span class="lang-en"> at net</span>
+                  <span class="lang-fr"> au filet</span>
+                </li>
+                <li>
+                  <span class="lang-en"> on pressure points at 30-30 or 40-40</span>
+                  <span class="lang-fr"> sur les points sous pression à 30-30 ou 40-40</span>
+                </li>
+                <li>
+                  <span class="lang-en"> when score is 15-30</span>
+                  <span class="lang-fr"> quand le score est de 15-30</span>
+                </li>
+                <li>
+                  <span class="lang-en"> the stats can be easily shared as an image or a CSV file</span>
+                  <span class="lang-fr"> les stats peuvent être facilement partagées sous forme d'image ou de fichier CSV</span>
+                </li>
               </ul>
-              <li> show a the graph of the match to look for trends</li>
+              <li>
+                <span class="lang-en"> show a the graph of the match to look for trends</span>
+                <span class="lang-fr"> affichez le graphique du match pour observer les tendances</span>
+              </li>
               <ul class="ui list">
-                <li> each point of the graph is button to look exactly what happened at that point</li>
-                <li> it can be easily shared as an image</li>
+                <li>
+                  <span class="lang-en"> each point of the graph is button to look exactly what happened at that point</span>
+                  <span class="lang-fr"> chaque point du graphique est un bouton pour voir exactement ce qui s'est passé à ce point</span>
+                </li>
+                <li>
+                  <span class="lang-en"> it can be easily shared as an image</span>
+                  <span class="lang-fr"> il peut être facilement partagé sous forme d'image</span>
+                </li>
               </ul>
-              <li> share the match</li>
+              <li>
+                <span class="lang-en"> share the match</span>
+                <span class="lang-fr"> partagez le match</span>
+              </li>
               <ul>
-                <li> so another user can open the match in its own device and look for the statistics or graphs</li>
+                <li>
+                  <span class="lang-en"> so another user can open the match in its own device and look for the statistics or graphs</span>
+                  <span class="lang-fr"> afin qu'un autre utilisateur puisse ouvrir le match sur son propre appareil et consulter les statistiques ou les graphiques</span>
+                </li>
               </ul>
-              <li> all match formats are supported</li>
-              <li> all the matches are kept so you can review your tennis statistics afterwards</li>
+              <li>
+                <span class="lang-en"> all match formats are supported</span>
+                <span class="lang-fr"> tous les formats de match sont pris en charge</span>
+              </li>
+              <li>
+                <span class="lang-en"> all the matches are kept so you can review your tennis statistics afterwards</span>
+                <span class="lang-fr"> tous les matchs sont conservés afin que vous puissiez revoir vos statistiques de tennis par la suite</span>
+              </li>
             </ul>
             <p>
-              The <b>Pro</b> subscription allows to store an unlimited number of matches win your
-              library and to qualify each strokes more precisely:
+              <span class="lang-en">
+                The <b>Pro</b> subscription allows to store an unlimited number of matches win your
+                library and to qualify each strokes more precisely:
+              </span>
+              <span class="lang-fr">
+                L'abonnement <b>Pro</b> permet de stocker un nombre illimité de matchs dans votre
+                bibliothèque et de qualifier chaque coup plus précisément :
+              </span>
               <ul class="ui list">
-		<li> winner, forced error</li>
-		<ul>
-                  <li> deep, short</li>
-                  <li> crosscourt, parallel, inside-in, inside-out</li>
-		</ul>
-		<li> unforced error</li>
-		<ul>
-                  <li> side of the court the ball was out</li>
-		</ul>
-		<li> 2nd stroke after service or after return</li>
+                <li>
+                  <span class="lang-en"> winner, forced error</span>
+                  <span class="lang-fr"> coup gagnant, faute provoquée</span>
+                </li>
+                <ul>
+                  <li>
+                    <span class="lang-en"> deep, short</span>
+                    <span class="lang-fr"> profond, court</span>
+                  </li>
+                  <li>
+                    <span class="lang-en"> crosscourt, parallel, inside-in, inside-out</span>
+                    <span class="lang-fr"> croisé, parallèle, décroisé, long de ligne</span>
+                  </li>
+                </ul>
+                <li>
+                  <span class="lang-en"> unforced error</span>
+                  <span class="lang-fr"> faute directe</span>
+                </li>
+                <ul>
+                  <li>
+                    <span class="lang-en"> side of the court the ball was out</span>
+                    <span class="lang-fr"> côté du court où la balle est sortie</span>
+                  </li>
+                </ul>
+                <li>
+                  <span class="lang-en"> 2nd stroke after service or after return</span>
+                  <span class="lang-fr"> 2e coup après le service ou après le retour</span>
+                </li>
               </ul>
             </p>
           </div>
@@ -737,9 +883,15 @@
 
         <div class="row">
           <div class="center aligned column">
-            <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image">
+            <a href="https://apps.apple.com/us/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image lang-en">
               <svg width="200" height="200">
                 <image xlink:href="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" x="0" y="0"
+                  width="100%" height="100%"></image>
+              </svg>
+            </a>
+            <a href="https://apps.apple.com/fr/app/ultimate-tennis-statistics/id1500516703" class="ui Huge image lang-fr">
+              <svg width="200" height="200">
+                <image xlink:href="images/Download_on_the_App_Store_Badge_FR_RGB_blk_100517.svg" x="0" y="0"
                   width="100%" height="100%"></image>
               </svg>
             </a>
@@ -811,6 +963,7 @@
   </div>
 </div>
 -->
+</div>
 </body>
 
 </html>
