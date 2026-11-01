@@ -1,73 +1,72 @@
 (function() {
-  function getPreferredLanguage() {
-    try {
-      var urlParams = new URLSearchParams(window.location.search);
-      var urlLang = urlParams.get('lang');
-      if (urlLang === 'fr' || urlLang === 'en') return urlLang;
+    function updateTitle(lang) {
+        const titles = {
+            'en': 'Ultimate Tennis Statistics | The Most Complete Tennis Tracking App',
+            'fr': 'Ultimate Tennis Statistics | L\'application de suivi de tennis la plus complète'
+        };
+        const pageTitles = {
+            'support.html': {
+                'en': 'Support | Ultimate Tennis Statistics',
+                'fr': 'Support | Ultimate Tennis Statistics'
+            },
+            'privacy.html': {
+                'en': 'Privacy Policy | Ultimate Tennis Statistics',
+                'fr': 'Politique de Confidentialité | Ultimate Tennis Statistics'
+            }
+        };
 
-      var hash = (window.location.hash || '').replace('#', '').toLowerCase();
-      if (hash === 'fr' || hash === 'en') return hash;
-
-      var savedLang = localStorage.getItem('preferred-language');
-      if (savedLang === 'fr' || savedLang === 'en') return savedLang;
-
-      var browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-      if (browserLang.startsWith('fr')) return 'fr';
-    } catch (e) {
-      // In case localStorage is blocked
+        const path = window.location.pathname.split('/').pop() || 'index.html';
+        if (pageTitles[path]) {
+            document.title = pageTitles[path][lang];
+        } else if (path === 'index.html' || path === 'homepage.html') {
+            document.title = titles[lang];
+        }
     }
-    return 'en';
-  }
 
-  function updateTitle(lang) {
-    var path = window.location.pathname.split('/').pop() || 'index.html';
-    if (path.indexOf('cinqcents') !== -1) {
-      document.title = 'CinqCents iOS App';
-    } else if (path.indexOf('privacy') !== -1) {
-      document.title = (lang === 'fr')
-        ? 'Ultimate Tennis Statistics - Politique de confidentialité'
-        : 'Ultimate Tennis Statistics - Privacy Policy';
-    } else if (path.indexOf('support') !== -1) {
-      document.title = (lang === 'fr')
-        ? 'Ultimate Tennis Statistics - Support'
-        : 'Ultimate Tennis Statistics - Support';
-    } else {
-      document.title = 'Ultimate Tennis Statistics';
+    function updateImages(lang) {
+        const images = document.querySelectorAll('img[data-localized]');
+        images.forEach(img => {
+            const src = img.getAttribute('src');
+            if (lang === 'fr') {
+                img.setAttribute('src', src.replace('/screenshots-en/', '/screenshots-fr/'));
+            } else {
+                img.setAttribute('src', src.replace('/screenshots-fr/', '/screenshots-en/'));
+            }
+        });
     }
-  }
 
-  function setLanguage(lang) {
-    if (lang !== 'fr' && lang !== 'en') {
-      lang = 'en';
+    function setLanguage(lang) {
+        document.documentElement.setAttribute('lang', lang);
+        localStorage.setItem('preferred-language', lang);
+        updateToggleButton(lang);
+        updateTitle(lang);
+        updateImages(lang);
     }
-    document.documentElement.setAttribute('lang', lang);
-    try {
-      localStorage.setItem('preferred-language', lang);
-    } catch (e) {}
 
-    updateTitle(lang);
-  }
+    function updateToggleButton(lang) {
+        const btn = document.getElementById('lang-toggle-btn');
+        if (btn) {
+            btn.innerHTML = lang === 'en' ? 'Français' : 'English';
+        }
+    }
 
-  function toggleLanguage() {
-    var currentLang = document.documentElement.getAttribute('lang') || 'en';
-    var newLang = (currentLang === 'en') ? 'fr' : 'en';
-    setLanguage(newLang);
-  }
+    function toggleLanguage() {
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        const newLang = currentLang === 'en' ? 'fr' : 'en';
+        setLanguage(newLang);
+    }
 
-  // Expose globally
-  window.setLanguage = setLanguage;
-  window.toggleLanguage = toggleLanguage;
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('preferred-language');
+        const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en';
+        const initialLang = savedLang || browserLang;
+        
+        setLanguage(initialLang);
 
-  // Apply language immediately before DOM render
-  var initialLang = getPreferredLanguage();
-  document.documentElement.setAttribute('lang', initialLang);
-
-  // When DOM is loaded, update title
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      setLanguage(document.documentElement.getAttribute('lang') || initialLang);
+        const btn = document.getElementById('lang-toggle-btn');
+        if (btn) {
+            btn.addEventListener('click', toggleLanguage);
+        }
     });
-  } else {
-    setLanguage(initialLang);
-  }
 })();
